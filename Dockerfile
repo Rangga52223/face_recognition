@@ -11,8 +11,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Coba tanpa --no-cache-dir agar pip lebih cepat (gunakan hanya jika tidak kehabisan disk)
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --upgrade pip && \
+RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
 COPY . .
