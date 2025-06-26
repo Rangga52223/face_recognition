@@ -12,7 +12,7 @@ Aplikasi ini cocok digunakan untuk absensi, sistem keamanan, atau kebutuhan iden
 
 **Penting**: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
 
-## Cara Menjalankan Menggunakan Docker
+## Cara Menjalankan Code Ini di Docker
 
 Build docker image nya terlebih dahulu :
 
@@ -26,4 +26,25 @@ jika sudah build, langsung run docker image nya:
 
 ```bash
 docker run -it --rm -p 8000:8000 face-re
+```
+## Cara Menjalankan Code Ini di Metal/Langsung
+
+Disaran kan menggunakan enviroment python.
+**Penting** : Jangan lupa ubah host.docker.internal menjadi localhost/ip/domain database kalian.
+
+**install semua libray yang di butuhkan.**
+
+windows:
+```bash
+pip install -r requirements.txt
+```
+
+linux:
+```bash
+pip3 install -r requirements.txt
+```
+**Jalankan run.py.**
+
+```bash
+pip install -r requirements.txt
 ```
