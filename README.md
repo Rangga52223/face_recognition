@@ -29,7 +29,7 @@ docker run -it --rm -p 8000:8000 face-re
 ```
 ## Cara Menjalankan Code Ini di Metal/Langsung
 
-Disaran kan menggunakan enviroment python.
+Disaran kan menggunakan enviroment python.</br>
 **Penting** : Jangan lupa ubah host.docker.internal menjadi localhost/ip/domain database kalian.
 
 **install semua libray yang di butuhkan.**
