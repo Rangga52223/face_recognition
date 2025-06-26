@@ -20,7 +20,7 @@ def match_face(embedding_input, db_faces, threshold=0.62):
     else:
         return {
             "match": False,
-            "name": "unknown",
+            "name": "No face matches found",
             "score": round(best_score, 4)
         }
     

@@ -13,7 +13,7 @@ def register_face_re(name, content):
         face_img = detect_and_align_face(face_img)
         face_base64 = encode_face_to_base64(face_img)
         if face_img is None:
-            raise ValueError("Tidak ada wajah yang terdeteksi")
+            raise ValueError("No faces detected in image")
         preprocessed = preprocess_face_for_embedding(face_img)
         embedding = get_embedding(preprocessed)
         embedding = [float(x) for x in embedding]
@@ -29,16 +29,16 @@ def recognition_face_re(content):
         face_img = normalize_lighting(img)
         face_img = detect_and_align_face(face_img)
         if face_img is None:
-            raise ValueError("Tidak ada wajah yang terdeteksi dalam gambar")
+            raise ValueError("No faces detected in image")
         preprocessed = preprocess_face_for_embedding(face_img)
         embedding = get_embedding(preprocessed)
         embedding = [float(x) for x in embedding]
         face_embeds = load_face_embed()
         if not face_embeds:
-            raise ValueError("Tidak ada wajah yang terdaftar untuk dikenali")
+            raise ValueError("No faces registered to recognize")
         match_results = match_face(embedding, face_embeds)
         if not match_results:
-            raise ValueError("Tidak ada kecocokan wajah yang ditemukan")
+            raise ValueError("No face matches found")
         return match_results
     except Exception as e:
         return HTTPException(status_code=500, detail=str(e))
