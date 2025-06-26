@@ -1,5 +1,6 @@
 import numpy as np
 def match_face(embedding_input, db_faces, threshold=0.6):
+    print('DEBUG: match face')
     best_score = -1
     best_match = None
 
@@ -26,4 +27,7 @@ def match_face(embedding_input, db_faces, threshold=0.6):
 def cosine_similarity(a, b):
     a = np.array(a)
     b = np.array(b)
-    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+    denom = np.linalg.norm(a) * np.linalg.norm(b)
+    if denom == 0:
+        return 0.0  # bisa juga return -1.0 tergantung logika sistem kamu
+    return np.dot(a, b) / denom

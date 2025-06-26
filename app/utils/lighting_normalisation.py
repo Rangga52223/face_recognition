@@ -5,6 +5,9 @@ def normalize_lighting(image: np.ndarray) -> np.ndarray:
     """
     Normalisasi pencahayaan dengan CLAHE pada channel L gambar RGB
     """
+    print("Shape after detect_and_align_face:", image.shape)
+    print('DEBUG: lighting')
+    
     if image is None:
         raise ValueError("Input gambar kosong")
 
