@@ -12,6 +12,13 @@ model, library, database yang digunakan:
 
 Gambar flow: https://drive.google.com/file/d/1TpSHYGyxR4xM_fwtYAahqYUAtKg1F-ox/view?usp=sharing
 
+## kolom dan struktur database
+Kolomn database:
+- **id_face:** untuk menyimpan id dari wajah yang di daftarkan, tipe data UUID.
+- **name:** nama dari wajah, tipe data varchar/string.
+- **face_embed:** menyimpan data extraksi feature dari model, tipe data double.
+- **image-base64:** gambar wajah yang disimpan dalam base64, tipe data text.
+
 **Penting**: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
 
 ## Cara Menjalankan Code Ini di Docker(Sangat di sarankan)
