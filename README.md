@@ -10,13 +10,13 @@ fitur yang ada di aplikasi ini:
 
 Aplikasi ini cocok digunakan untuk absensi, sistem keamanan, atau kebutuhan identifikasi lainnya.
 
-***Penting: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
+**Penting**: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
 
 ## Cara Menjalankan Menggunakan Docker
 
 Build docker image nya terlebih dahulu :
 
-**Penting : Cek kembali link database nya di /app/config.py.
+**Penting** : Cek kembali link database nya di /app/config.py.
 
 ```bash
 docker build -t face-re .
