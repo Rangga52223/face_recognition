@@ -2,7 +2,7 @@
 
 ## Pembukaan dan Penjelasan
 
-Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar. Saya telah mencari model dan libary yang cocok untuk dapat digunakan dalam aplikasi ini, saya menanyakan 3 AI chat, seperti ChatGpt, Gemini, dan Claude. Model yang saya gunakan untuk feature extractor menggunakan **ARCFace R100** sebuah model pretrained dari insightface yang memiliki akurasi yang cukup untuk feature extarctor, untuk face detection saya menggunakan MTCNN yang ringan dan cukup bagus untuk deteksi.
+Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar. Saya telah mencari model dan libary yang cocok untuk dapat digunakan dalam aplikasi ini, saya menanyakan 3 AI chat, seperti ChatGpt, Gemini, dan Claude untuk mencari rekomendasi. Model yang saya gunakan untuk feature extractor menggunakan **ARCFace R100** sebuah model pretrained dari insightface yang memiliki akurasi yang cukup untuk feature extarctor, untuk face detection saya menggunakan MTCNN yang ringan dan cukup bagus untuk deteksi.
 
 model, library, database yang digunakan:
 - **Model Extract Feature:** ARCFace R100.
