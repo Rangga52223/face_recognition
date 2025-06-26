@@ -1,10 +1,29 @@
 # Face Recognition
 
-Aplikasi ini merupakan sistem pengenalan wajah berbasis AI yang dapat digunakan untuk mengidentifikasi dan memverifikasi identitas seseorang melalui gambar atau video. Fitur utama aplikasi ini meliputi:
+Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar atau video. Program ini tidak memiliki antarmuka pengguna langsung, melainkan berfungsi sebagai server yang menangani permintaan dari klien.
 
+fitur yang ada di aplikasi ini:
 - **Deteksi Wajah Otomatis:** Mengidentifikasi wajah secara real-time dari kamera atau gambar yang diunggah.
 - **Pengenalan Individu:** Mencocokkan wajah dengan database untuk verifikasi identitas.
 - **Antarmuka Pengguna Sederhana:** Mudah digunakan oleh pengguna tanpa keahlian teknis.
 - **Keamanan Data:** Data wajah disimpan dan diproses dengan memperhatikan privasi dan keamanan.
 
 Aplikasi ini cocok digunakan untuk absensi, sistem keamanan, atau kebutuhan identifikasi lainnya.
+
+***Penting: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
+
+## Cara Menjalankan Menggunakan Docker
+
+Build docker image nya terlebih dahulu :
+
+**Penting : Cek kembali link database nya di /app/config.py.
+
+```bash
+docker build -t face-re .
+```
+
+jika sudah build, langsung run docker image nya:
+
+```bash
+docker run -it --rm -p 8000:8000 face-re
+```
