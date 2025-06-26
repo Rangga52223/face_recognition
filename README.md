@@ -46,5 +46,16 @@ pip3 install -r requirements.txt
 **Jalankan run.py.**
 
 ```bash
-pip install -r requirements.txt
+python run.py
 ```
+### fix jika terjadi error ###
+
+Jarang terjadi tapi kadang muncul, link database nya tidak terbaca, jika mengalami itu pergi ke **/app/db_model/database.py** dan ubah:
+
+```bash
+SQLALCHEMY_DATABASE_URL = Config.SQLALCHEMY_DATABASE_URI #hapus ini
+
+engine = create_engine('ganti dengan link database mu')
+```
+
+## Cara Menggunakan Code Ini ##
