@@ -9,11 +9,11 @@ def register_face_re(name, content):
         nparr = np.frombuffer(content, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        face_img = detect_and_align_face(img)
+        face_img = normalize_lighting(img)
+        face_img = detect_and_align_face(face_img)
+        face_base64 = encode_face_to_base64(face_img)
         if face_img is None:
             raise ValueError("Tidak ada wajah yang terdeteksi")
-        face_img = normalize_lighting(face_img)
-        face_base64 = encode_face_to_base64(face_img)
         preprocessed = preprocess_face_for_embedding(face_img)
         embedding = get_embedding(preprocessed)
         embedding = [float(x) for x in embedding]
@@ -26,10 +26,10 @@ def recognition_face_re(content):
         nparr = np.frombuffer(content, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        face_img = detect_and_align_face(img)
+        face_img = normalize_lighting(img)
+        face_img = detect_and_align_face(face_img)
         if face_img is None:
             raise ValueError("Tidak ada wajah yang terdeteksi dalam gambar")
-        face_img = normalize_lighting(face_img)
         preprocessed = preprocess_face_for_embedding(face_img)
         embedding = get_embedding(preprocessed)
         embedding = [float(x) for x in embedding]

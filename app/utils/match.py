@@ -1,5 +1,5 @@
 import numpy as np
-def match_face(embedding_input, db_faces, threshold=0.6):
+def match_face(embedding_input, db_faces, threshold=0.62):
     print('DEBUG: match face')
     best_score = -1
     best_match = None
