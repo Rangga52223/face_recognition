@@ -1,13 +1,16 @@
 # Face Recognition
 
-Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar atau video. Program ini tidak memiliki antarmuka pengguna langsung, melainkan berfungsi sebagai server yang menangani permintaan dari klien.
+## Pembukaan dan Penjelasan
 
-fitur yang ada di aplikasi ini:
+Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar. Saya telah mencari model dan libary yang cocok untuk dapat digunakan dalam aplikasi ini, saya menanyakan 3 AI chat, seperti ChatGpt, Gemini, dan Claude. Model yang saya gunakan untuk feature extractor menggunakan **ARCFace R100** sebuah model pretrained dari insightface yang memiliki akurasi yang cukup untuk feature extarctor, untuk face detection saya menggunakan MTCNN yang ringan dan cukup bagus untuk deteksi
+
+model, library, database yang digunakan:
 - **Deteksi Wajah Otomatis:** Mengidentifikasi wajah secara real-time dari kamera atau gambar yang diunggah.
 - **Pengenalan Individu:** Mencocokkan wajah dengan database untuk verifikasi identitas.
 - **Antarmuka Pengguna Sederhana:** Mudah digunakan oleh pengguna tanpa keahlian teknis.
 - **Keamanan Data:** Data wajah disimpan dan diproses dengan memperhatikan privasi dan keamanan.
 
+<img src="https://drive.google.com/file/d/1TpSHYGyxR4xM_fwtYAahqYUAtKg1F-ox/view?usp=sharing" alt="Klik Gambar">
 Aplikasi ini cocok digunakan untuk absensi, sistem keamanan, atau kebutuhan identifikasi lainnya.
 
 **Penting**: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
@@ -78,7 +81,7 @@ response dari backend jika berhasil:
     "message": "Face registered successfully"
 }
 ```
-jika error akan muncul pesan tergantung error nya
+jika error akan muncul pesan tergantung error nya.
 
 ### Recognition ###
 access: http://127.0.0.1:8000/api/face/recognition
@@ -96,4 +99,47 @@ response dari backend jika berhasil:
     "score": 0.7245 #kecocokan dengan wajah yang ada di database
 }
 ```
-jika error akan muncul pesan tergantung error nya
+jika error akan muncul pesan tergantung error nya.
+
+### Delete
+access: http://127.0.0.1:8000/api/face/recognition/id-yang-mau-di-delete
+
+jika mau menghapus gambar wajah dari database bisa menggunakan delete. cara menggunakanya ambil id_face dan paste di akhir endpoints.
+
+response dari backend jika berhasil:
+```bash
+{
+    "message": "Face with ID 52d697c0-f7da-42bc-b18a-5e31c0badf89 has been deleted successfully"
+}
+```
+
+### Get ALL Face
+access: http://127.0.0.1:8000/api/face/
+
+method: get
+
+jika mau melihat dan data apa saja yang ada di database bisa langsung get saja.
+
+response dari backend jika berhasil:
+```bash
+[
+    {
+        "id_face": "8aed58c1-3a84-4145-9f7d-0d4488a21f66",
+        "name": "Jack",
+        "image": "Base64 Image" #gambar yang di save adalah base64 bukan untuk recognition emg untuk di tampilkan.
+    },
+    {
+        "id_face": "f7b9a525-b024-4e7d-a7b3-0adf63c4d4e4",
+        "name": "Rangga2",
+        "image": "Base64 Image"
+    },
+    {
+        "id_face": "bcd81e1a-cfcf-4685-8698-5b409cf39ed1",
+        "name": "Alex",
+        "image": "Base64 Image"
+    }
+]
+```
+
+## Penutup
+Terima kasih telah melihat code aplikasi saya. 
