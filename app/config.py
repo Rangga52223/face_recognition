@@ -1,5 +1,5 @@
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Rangga%40%29%29%40312@localhost:5432/db_face_recognition'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Rangga%40%29%29%40312@host.docker.internal:5432/db_face_recognition'
     SQLALCHEMY_ENGINE_OPTIONS = {
         'pool_pre_ping': True,
         'pool_recycle': 300,
