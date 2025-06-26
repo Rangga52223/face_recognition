@@ -87,7 +87,6 @@ response dari backend jika berhasil:
     "message": "Face registered successfully"
 }
 ```
-jika error akan muncul pesan tergantung error nya.
 
 ### Recognition ###
 access: http://127.0.0.1:8000/api/face/recognition
@@ -105,7 +104,6 @@ response dari backend jika berhasil:
     "score": 0.7245 #kecocokan dengan wajah yang ada di database
 }
 ```
-jika error akan muncul pesan tergantung error nya.
 
 ### Delete
 access: http://127.0.0.1:8000/api/face/recognition/id-yang-mau-di-delete
