@@ -2,16 +2,15 @@
 
 ## Pembukaan dan Penjelasan
 
-Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar. Saya telah mencari model dan libary yang cocok untuk dapat digunakan dalam aplikasi ini, saya menanyakan 3 AI chat, seperti ChatGpt, Gemini, dan Claude. Model yang saya gunakan untuk feature extractor menggunakan **ARCFace R100** sebuah model pretrained dari insightface yang memiliki akurasi yang cukup untuk feature extarctor, untuk face detection saya menggunakan MTCNN yang ringan dan cukup bagus untuk deteksi
+Program ini adalah backend dari sistem pengenalan wajah berbasis AI. Backend bertanggung jawab untuk memproses data, menjalankan algoritma pengenalan wajah, serta menyediakan API yang dapat diakses oleh aplikasi frontend atau sistem lain untuk melakukan identifikasi dan verifikasi identitas melalui gambar. Saya telah mencari model dan libary yang cocok untuk dapat digunakan dalam aplikasi ini, saya menanyakan 3 AI chat, seperti ChatGpt, Gemini, dan Claude. Model yang saya gunakan untuk feature extractor menggunakan **ARCFace R100** sebuah model pretrained dari insightface yang memiliki akurasi yang cukup untuk feature extarctor, untuk face detection saya menggunakan MTCNN yang ringan dan cukup bagus untuk deteksi.
 
 model, library, database yang digunakan:
-- **Deteksi Wajah Otomatis:** Mengidentifikasi wajah secara real-time dari kamera atau gambar yang diunggah.
-- **Pengenalan Individu:** Mencocokkan wajah dengan database untuk verifikasi identitas.
-- **Antarmuka Pengguna Sederhana:** Mudah digunakan oleh pengguna tanpa keahlian teknis.
-- **Keamanan Data:** Data wajah disimpan dan diproses dengan memperhatikan privasi dan keamanan.
+- **Model Extract Feature:** ARCFace R100.
+- **Face Detection:** MTCNN.
+- **Api Framework:** Fastapi.
+- **Database:** PostgreSQL.
 
-<img src="https://drive.google.com/file/d/1TpSHYGyxR4xM_fwtYAahqYUAtKg1F-ox/view?usp=sharing" alt="Klik Gambar">
-Aplikasi ini cocok digunakan untuk absensi, sistem keamanan, atau kebutuhan identifikasi lainnya.
+Gambar flow: https://drive.google.com/file/d/1TpSHYGyxR4xM_fwtYAahqYUAtKg1F-ox/view?usp=sharing
 
 **Penting**: Jangan lupa import database dari repo ini. Jangan lupa ubah password dan nama user nya di /apps/config.py. Saya menggunakan RDBMS PostgreSQL 17.
 
